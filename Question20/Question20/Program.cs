@@ -4,14 +4,14 @@ using System.Threading.Tasks;
 class Program
 {
     
-    public static Func<int> GenerateRandomNumber = () =>
+    private static Func<int> GenerateRandomNumber = () =>
     {
         Random rand = new Random();
         return rand.Next(1, 10001);  
     };
 
    
-    public static Func<Func<int>, string> GenerateMessage = (generateNumberFunc) =>
+    private static Func<Func<int>, string> GenerateMessage = (generateNumberFunc) =>
     {
         int number = generateNumberFunc();  
         return $"The generated number is: {number}";
